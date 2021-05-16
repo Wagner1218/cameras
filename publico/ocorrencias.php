@@ -11,7 +11,10 @@
 <body>
     <nav class="navbar navbar-light bg-light justify-content-between">
       <div class="container">
-        <h1><a class="logo navbar-brand">WM</a></h1>
+      <h1>
+          <img src="../img/icone-camera.png" style="width: 40px; height: 40px,;" alt="">
+          <a class="logo navbar-brand">WM</a>
+        </h1>
         <h5><a href="cadastro.php">Cadatro</a></h5>
         <h5><a href="ocorrencias.php">Ocorrências</a></h5>
         <h5><a href="status.php">Status</a></h5>
@@ -65,7 +68,8 @@
         </div>
     </div>
     <div class="logo_rodape">
-        <h4>Wagner Martins</h4>
-    </div>
+       <img src="../img/icone-camera.png" style="width: 40px; height: 40px,;" alt=""> 
+      <h4>Wagner Martins</h4>
+    </div><br><br>
 </body>
 </html>
