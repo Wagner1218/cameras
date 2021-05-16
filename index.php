@@ -37,11 +37,11 @@
                 <form method="POST" action="">
                   <div class="modal-body">
                     <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">Usuário</label>
+                      <label for="recipient-name" class="col-form-label">Usuário:</label>
                       <input type="text" class="form-control" id="recipient-name">
                     </div>
                     <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">Senha</label>
+                      <label for="recipient-name" class="col-form-label">Senha:</label>
                       <input type="text" class="form-control" id="recipient-name">
                     </div>
                   </div>
@@ -67,15 +67,15 @@
                 <form method="POST" action="">
                   <div class="modal-body">
                   <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">Nome</label>
+                      <label for="recipient-name" class="col-form-label">Nome:</label>
                       <input type="text" class="form-control" id="recipient-name">
                     </div>
                     <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">E-mail</label>
+                      <label for="recipient-name" class="col-form-label">E-mail:</label>
                       <input type="text" class="form-control" id="recipient-name">
                     </div>
                     <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">Senha</label>
+                      <label for="recipient-name" class="col-form-label">Senha:</label>
                       <input type="text" class="form-control" id="recipient-name">
                     </div>
                   </div>
