@@ -3,7 +3,7 @@
 $servername = "localhost";
 $database = "cameras"; 
 $username = "root";
-$password = "martins1999";
+$password = "";
 $sql = "mysql:host=$servername;dbname=$database;";
 $dsn_Options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
 
