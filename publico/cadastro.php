@@ -37,32 +37,32 @@ if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
       </div>
     </nav>
       <div class="cadastro">
-        <hr><!--required-->
+        <hr>
       <div class="container"><br>
         <form method="POST" action="../php/controlador.php">
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Nome completo</label>
-                <input type="texte" name="nome" class="form-control" id="inputEmail4" placeholder="Nome completo:" >
+                <input type="texte" name="nome" class="form-control" id="inputEmail4" placeholder="Nome completo:" required>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputPassword4">Telefone</label>
-                <input type="text" name="telefone" class="form-control" id="inputPassword4" placeholder="(47) 9xxxx-xxxx" >
+                <input type="text" name="telefone" class="form-control" id="inputPassword4" placeholder="(47) 9xxxx-xxxx" required>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Data</label>
-                <input type="date" name="data1" class="form-control" id="inputEmail4" placeholder="dd/mm/aaaa" >
+                <input type="date" name="data1" class="form-control" id="inputEmail4" placeholder="dd/mm/aaaa" required>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputPassword4">Horário</label>
-                <input type="time" name="horario" class="form-control" id="inputPassword4" placeholder="Horário:" >
+                <input type="time" name="horario" class="form-control" id="inputPassword4" placeholder="Horário:" required>
               </div>
             </div>
             <div class="form-group">
               <label for="formGroupExampleInput">Local</label>
-              <input type="text" name="local1" class="form-control" id="formGroupExampleInput" placeholder="Local:" >
+              <input type="text" name="local1" class="form-control" id="formGroupExampleInput" placeholder="Local:" required>
             </div>
             <div class="form-group">
               <label for="exampleFormControlTextarea1">Descrição</label>
