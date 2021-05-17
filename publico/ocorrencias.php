@@ -1,5 +1,11 @@
 <?php
-require ("../php/consulta.php");
+session_start();
+
+if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
+  require ("../php/consulta.php");   
+}else{
+  header('Location: ../index.php?login=erro');
+}
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +22,7 @@ require ("../php/consulta.php");
     <nav class="navbar navbar-light bg-light justify-content-between">
       <div class="container">
       <h1>
-          <img src="../img/icone-camera.png" style="width: 40px; height: 40px,;" alt="">
+          <a href="cadastro.php"><img src="../img/icone-camera.png" style="width: 40px; height: 40px,;" alt=""></a>
           <a class="logo navbar-brand">WM</a>
         </h1>
         <h5><a href="cadastro.php">Cadatro</a></h5>

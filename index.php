@@ -1,3 +1,6 @@
+<?php
+    $erro = isset($_GET["login"]) && $_GET["login"] == 'erro';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -16,9 +19,14 @@
     <nav class="navbar navbar-light bg-light justify-content-between">
       <div class="container">
         <h1>
-          <img src="img/icone-camera.png" style="width: 40px; height: 40px,;" alt="">
-          <a class="logo navbar-brand">WM</a>
+          <a href="index.php"><img src="img/icone-camera.png" style="width: 40px; height: 40px,;" alt=""></a>
+          <a href="index.php" class="logo navbar-brand">WM</a>
         </h1>
+        <?php
+           if($erro){
+            echo "<h3 style='color: red;'> Usuário ou senha inválido(s)</h3>";
+            }
+          ?>
         <div class="form-inline">
         </div>
       </div>
@@ -34,20 +42,20 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <form method="POST" action="">
+                <form method="POST" action="login/autenticar.php">
                   <div class="modal-body">
                     <div class="form-group">
                       <label for="recipient-name" class="col-form-label">Usuário:</label>
-                      <input type="text" class="form-control" id="recipient-name">
+                      <input type="text" name="email" class="form-control" id="recipient-name">
                     </div>
                     <div class="form-group">
                       <label for="recipient-name" class="col-form-label">Senha:</label>
-                      <input type="text" class="form-control" id="recipient-name">
+                      <input type="text" name="senha" class="form-control" id="recipient-name">
                     </div>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
-                    <button type="button" class="btn btn-primary">Entrar</button>
+                    <button type="submit" name="acao" value="login" class="btn btn-primary">Entrar</button>
                   </div>
                 </form>
               </div>
