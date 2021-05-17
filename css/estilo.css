@@ -24,6 +24,10 @@ a{
     text-decoration:none; 
     color: black;
 }
+.logo_rodape{
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+}
 .teste{
     position:absolute; 
     bottom:0; 
@@ -38,6 +42,6 @@ a{
     width: 20em;
     display: block;
     margin-left: auto;
-    margin-right: auto;
-    
+    margin-right: auto
 }
+

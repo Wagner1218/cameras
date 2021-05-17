@@ -1,7 +1,3 @@
-<?php
-require ("../php/consulta.php");
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -38,29 +34,22 @@ require ("../php/consulta.php");
                 <th scope="col">Nome</th>
                 <th scope="col">Telefone</th>
                 <th scope="col">Data</th>
-                <th scope="col">Local</th>
                 <th scope="col">Descrição</th>
+                <th scope="col">Conclusão</th>
               </tr>
             </thead>
-            
-            <?php
-              if(count($resultado) > 0){
-                foreach($resultado as $indice => $dbaselec) { 	
-                  echo "<tbody>  
-                    <div class='text-nowrap'>
-                      <tr>
-                        <th scope='row' id='fname_qtde_$dbaselec->id'>$dbaselec->nome</th>
-                        <th >$dbaselec->telefone</th>
-                        <th>$dbaselec->data1</th>
-                        <th>$dbaselec->local1</th>
-                        <th style='max-width: 500px;'>$dbaselec->descricao</th>
-                      </tr>
-                    </div>
-                  </tbody>";
-                  
-                }
-              }
-            ?>
+            <tbody>
+              <div class="text-nowrap">
+                <tr>
+                  <th scope="row">Wagner Martins</th>
+                  <td>(47) 98429-3132</td>
+                  <td>17/12/1999</td>
+                  <td style="max-width: 300px;">FrenteFrente FrenteFrente FrenteFrente FrenteFrenteFrente FrenteFrente FrenteFrente FrenteFrenteFrente FrenteFrente FrenteFrente FrenteFrenteFrente FrenteFrente FrenteFrenteFrente </td>
+                  <td style="max-width: 300px;">FrenteFrente FrenteFrente FrenteFrente FrenteFrenteFrente FrenteFrente FrenteFrente FrenteFrenteFrente FrenteFrente FrenteFrente FrenteFrenteFrente FrenteFrente FrenteFrenteFrente </td>
+                </tr>
+              </div>
+            </tbody>
+        
           </table>
         </div>
         </div><br><hr>
