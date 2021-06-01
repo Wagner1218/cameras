@@ -1,10 +1,11 @@
 <?php
-  session_start();
-  if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
+session_start();
 
-  }else{
-    header('Location: ../index.php?login=erro');
-  }
+if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
+  require ("../php/consulta.php");   
+}else{
+  header('Location: ../index.php?login=erro');
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -12,9 +13,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../css/estilo.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  
+  <title>Status</title>
 </head>
 <body>
     <nav class="navbar navbar-light bg-light justify-content-between">
@@ -36,28 +41,39 @@
         <hr>
         <div class="" style="margin: 30px;"><br>
         <div class="table-responsive">
-          <table class="table table-striped">
+        <table class="table table-striped">
             <thead>
               <tr>
                 <th scope="col">Nome</th>
                 <th scope="col">Telefone</th>
                 <th scope="col">Data</th>
+                <th scope="col">Local</th>
+                <th scope="col">Horário</th>
                 <th scope="col">Descrição</th>
-                <th scope="col">Conclusão</th>
+                <th scope="col">Conclução</th>
               </tr>
             </thead>
-            <tbody>
-              <div class="text-nowrap">
-                <tr>
-                  <th scope="row">Wagner Martins</th>
-                  <td>(47) 98429-3132</td>
-                  <td>17/12/1999</td>
-                  <td style="max-width: 300px;">FrenteFrente FrenteFrente FrenteFrente FrenteFrenteFrente FrenteFrente FrenteFrente FrenteFrenteFrente FrenteFrente FrenteFrente FrenteFrenteFrente FrenteFrente FrenteFrenteFrente </td>
-                  <td style="max-width: 300px;">FrenteFrente FrenteFrente FrenteFrente FrenteFrenteFrente FrenteFrente FrenteFrente FrenteFrenteFrente FrenteFrente FrenteFrente FrenteFrenteFrente FrenteFrente FrenteFrenteFrente </td>
-                </tr>
-              </div>
-            </tbody>
-        
+            
+            <?php
+              if(count($resultado) > 0){
+                foreach($resultado as $indice => $dbaselec) { 	
+                  echo "<tbody>  
+                    <div class='text-nowrap'>
+                      <tr>
+                        <th scope='row' id='fname_qtde_$dbaselec->id'>$dbaselec->nome</th>
+                        <th >$dbaselec->telefone</th>
+                        <th>$dbaselec->data1</th>
+                        <th>$dbaselec->local1</th>
+                        <th>$dbaselec->horario</th>
+                        <th style='max-width: 500px;'>$dbaselec->descricao</th>
+                        <th style='max-width: 500px;'>$dbaselec->conclucao</th>
+                      </tr>
+                    </div>
+                  </tbody>";
+                  
+                }
+              }
+            ?>
           </table>
         </div>
         </div><br><hr>

@@ -14,8 +14,12 @@ if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../css/estilo.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  
   <title>Login</title>
 </head>
 <body>
@@ -47,6 +51,7 @@ if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
                 <th scope="col">Local</th>
                 <th scope="col">Horário</th>
                 <th scope="col">Descrição</th>
+                <th scope="col">Ações</th>
               </tr>
             </thead>
             
@@ -62,6 +67,10 @@ if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
                         <th>$dbaselec->local1</th>
                         <th>$dbaselec->horario</th>
                         <th style='max-width: 500px;'>$dbaselec->descricao</th>
+                        <th>
+                          <button type='submit' name=''class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button>
+                          <button type='submit' data-toggle='modal' data-target='#conclucao' name='' class='btn btn-success'><i class='fa fa-pencil' aria-hidden='true'></i></button>
+                        </th>
                       </tr>
                     </div>
                   </tbody>";
@@ -72,6 +81,31 @@ if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
           </table>
         </div>
         </div><br><hr>
+        <!--Modal-->
+          <div class="modal fade" id="conclucao" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="login">Conclução</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <form method="POST" action="../php/controlador.php">
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">Descrição:</label>
+                      <textarea type="text" name="add_conclucao" class="form-control" id="recipient-name"></textarea>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
+                    <button type="submit" name="conclucao" class="btn btn-primary">Entrar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
     <div class="logo_rodape">
