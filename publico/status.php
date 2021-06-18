@@ -50,7 +50,7 @@ if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
                 <th scope="col">Local</th>
                 <th scope="col">Horário</th>
                 <th scope="col">Descrição</th>
-                <th scope="col">Conclução</th>
+                <th scope="col">Link</th>
               </tr>
             </thead>
             
@@ -66,7 +66,7 @@ if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
                         <th>$dbaselec->local1</th>
                         <th>$dbaselec->horario</th>
                         <th style='max-width: 500px;'>$dbaselec->descricao</th>
-                        <th style='max-width: 500px;'>$dbaselec->conclucao</th>
+                        <th style='max-width: 500px;'>$dbaselec->link</th>
                       </tr>
                     </div>
                   </tbody>";

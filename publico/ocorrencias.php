@@ -61,17 +61,18 @@ if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
                   echo "<tbody>  
                     <div class='text-nowrap'>
                       <tr>
-                        <th scope='row' id='fname_qtde_$dbaselec->id'>$dbaselec->nome</th>
+                        <th scope='row'>$dbaselec->nome</th>
                         <th >$dbaselec->telefone</th>
                         <th>$dbaselec->data1</th>
                         <th>$dbaselec->local1</th>
                         <th>$dbaselec->horario</th>
                         <th style='max-width: 500px;'>$dbaselec->descricao</th>
-                        <th>
-                          <button type='submit' name=''class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button>
-                          <button type='submit' data-toggle='modal' data-target='#conclucao' name='' class='btn btn-success'><i class='fa fa-pencil' aria-hidden='true'></i></button>
-                        </th>
-                      </tr>
+                        <form method='POST' action='../php/controlador.php?del=$dbaselec->id'>
+                          <th>
+                            <button type='submit' name='acao' value='deletar' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button>
+                        </form>
+                          </th>
+                        </tr>
                     </div>
                   </tbody>";
                   
@@ -81,31 +82,6 @@ if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
           </table>
         </div>
         </div><br><hr>
-        <!--Modal-->
-          <div class="modal fade" id="conclucao" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="login">Conclução</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <form method="POST" action="../php/controlador.php">
-                  <div class="modal-body">
-                    <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">Descrição:</label>
-                      <textarea type="text" name="add_conclucao" class="form-control" id="recipient-name"></textarea>
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
-                    <button type="submit" name="conclucao" class="btn btn-primary">Entrar</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
       </div>
     </div>
     <div class="logo_rodape">

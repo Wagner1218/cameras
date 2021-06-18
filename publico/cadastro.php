@@ -65,6 +65,10 @@ if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
               <input type="text" name="local1" class="form-control" id="formGroupExampleInput" placeholder="Local:" required>
             </div>
             <div class="form-group">
+              <label for="formGroupExampleInput">Link</label>
+              <input type="text" name="link" class="form-control" id="formGroupExampleInput" placeholder="Local:" required>
+            </div>
+            <div class="form-group">
               <label for="exampleFormControlTextarea1">Descrição</label>
               <textarea class="form-control" name="descricao" id="exampleFormControlTextarea1" rows="5"></textarea>
             </div>
