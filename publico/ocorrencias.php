@@ -51,7 +51,7 @@ if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
                 <th scope="col">Local</th>
                 <th scope="col">Horário</th>
                 <th scope="col">Descrição</th>
-                <th scope="col">Ações</th>
+                <th scope="col">Ação</th>
               </tr>
             </thead>
             
