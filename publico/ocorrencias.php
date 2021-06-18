@@ -25,7 +25,7 @@ if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
 <body>
     <nav class="navbar navbar-light bg-light justify-content-between">
       <div class="container">
-      <h1>
+        <h1>
           <a href="cadastro.php"><img src="../img/icone-camera.png" style="width: 40px; height: 40px,;" alt=""></a>
           <a class="logo navbar-brand">WM</a>
         </h1>
@@ -33,7 +33,9 @@ if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
         <h5><a href="ocorrencias.php">Ocorrências</a></h5>
         <h5><a href="status.php">Status</a></h5>
         <div class="form-inline">
-          <button class="btn btn-danger" type="submit">Sair</button>
+          <form method="POST" action="../login/sair.php">
+            <button class="btn btn-danger" name="acao" value="sair" type="submit" >Sair</button>
+          </form>
         </div>
       </div>
     </nav>
