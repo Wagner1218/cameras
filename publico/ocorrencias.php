@@ -3,6 +3,7 @@ session_start();
 
 if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
   require ("../php/consulta.php");   
+ 
 }else{
   header('Location: ../index.php?login=erro');
 }
@@ -26,10 +27,10 @@ if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
     <nav class="navbar navbar-light bg-light justify-content-between">
       <div class="container">
         <h1>
-          <a href="cadastro.php"><img src="../img/icone-camera.png" style="width: 40px; height: 40px,;" alt=""></a>
+          <a href="cadastro.php"><img src="../img/icone-camera.png" class="logo" alt=""></a>
           <a class="logo navbar-brand">WM</a>
         </h1>
-        <h5><a href="cadastro.php">Cadatro</a></h5>
+        <h5><a href="cadastro.php">Cadatros</a></h5>
         <h5><a href="ocorrencias.php">Ocorrências</a></h5>
         <h5><a href="status.php">Status</a></h5>
         <div class="form-inline">
@@ -53,10 +54,13 @@ if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
                 <th scope="col">Local</th>
                 <th scope="col">Horário</th>
                 <th scope="col">Descrição</th>
-                <th scope="col">Ação</th>
+                  <?php
+                    if($_SESSION['cargo'] == 'adm100'){
+                      echo "<th scope='col'>Ação</th>";
+                    }
+                  ?>
               </tr>
             </thead>
-            
             <?php
               if(count($resultado) > 0){
                 foreach($resultado as $indice => $dbaselec) { 	
@@ -68,16 +72,19 @@ if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
                         <th>$dbaselec->data1</th>
                         <th>$dbaselec->local1</th>
                         <th>$dbaselec->horario</th>
-                        <th style='max-width: 500px;'>$dbaselec->descricao</th>
-                        <form method='POST' action='../php/controlador.php?del=$dbaselec->id'>
-                          <th>
-                            <button type='submit' name='acao' value='deletar' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button>
-                        </form>
-                          </th>
+                        <th style='max-width: 500px;'>$dbaselec->descricao</th>";
+                      ?>
+                    <?php      
+                        if($_SESSION['cargo'] == 'adm100'){
+                          echo "<form method='POST' action='../php/controlador.php?del=$dbaselec->id'>
+                            <th>
+                              <button type='submit' name='acao' value='deletar' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button>
+                          </form>";
+                        }
+                          echo"</th>
                         </tr>
                     </div>
-                  </tbody>";
-                  
+                  </tbody>"; 
                 }
               }
             ?>

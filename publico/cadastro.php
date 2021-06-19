@@ -7,8 +7,6 @@ if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
   header('Location: ../index.php?login=erro');
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -23,10 +21,10 @@ if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
     <nav class="navbar navbar-light bg-light justify-content-between">
       <div class="container">
         <h1>
-          <a href="cadastro.php"><img src="../img/icone-camera.png" style="width: 40px; height: 40px,;" alt=""></a>
+          <a href="cadastro.php"><img src="../img/icone-camera.png" class="logo" alt=""></a>
           <a class="logo navbar-brand">WM</a>
         </h1>
-        <h5><a href="cadastro.php">Cadatro</a></h5>
+        <h5><a href="cadastro.php">Cadatros</a></h5>
         <h5><a href="ocorrencias.php">Ocorrências</a></h5>
         <h5><a href="status.php">Status</a></h5>
         <div class="form-inline">
@@ -72,7 +70,6 @@ if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
               <label for="exampleFormControlTextarea1">Descrição</label>
               <textarea class="form-control" name="descricao" id="exampleFormControlTextarea1" rows="5"></textarea>
             </div>
-            
             <button type="submit" name="acao" value="salvar" id="enviar" class="btn btn-danger">Salvar</button>
           </form><br>
           <hr>

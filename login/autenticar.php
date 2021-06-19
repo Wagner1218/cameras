@@ -7,7 +7,7 @@ $senha = $_POST["senha"];
 $login = isset($_POST["acao"]) && $_POST["acao"] == 'login';
 
 if($login){
-    $res = $pdo->prepare('SELECT id, nome, email, senha FROM usuarios WHERE email = :email and senha = :senha');
+    $res = $pdo->prepare('SELECT id, nome, email, senha, cargo FROM usuarios WHERE email = :email and senha = :senha');
     $res->bindValue(":email",$email);
     $res->bindValue(":senha",$senha);
     $res->execute();
@@ -19,6 +19,8 @@ if($login){
     
     $_SESSION['id'] = $usuario['id'];
     $_SESSION['nome'] = $usuario['nome'];
+    $_SESSION['cargo'] = $usuario['cargo'];
+    
     header('Location: ../publico/cadastro.php');
     //"Usuário Autenticado";
     print_r("Usuario autenticado");

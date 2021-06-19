@@ -1,5 +1,6 @@
 <?php
     $erro = isset($_GET["login"]) && $_GET["login"] == 'erro';
+    
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -18,21 +19,22 @@
 <body>
     <nav class="navbar navbar-light bg-light justify-content-between">
       <div class="container">
-        <h1>
-          <a href="index.php"><img src="img/icone-camera.png" style="width: 40px; height: 40px,;" alt=""></a>
-          <a href="index.php" class="logo navbar-brand">WM</a>
-        </h1>
+        <div>
+          <a href="index.php"><img src="img/icone-camera.png" style="width: 40px; margin-top: -20px; height: 40px;" alt=""></a>
+          <a href="index.php" class="logo navbar-brand"style="padding: 10px;">WM</a>
+        </div>
         <?php
            if($erro){
-            echo "<h3 style='color: red;'> Usuário ou senha inválido(s)</h3>";
+            echo "<h3 style='color: red;'>Não te encontramos ):</h3>";
             }
           ?>
         <div class="form-inline">
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#login">Login</button>
         </div>
       </div>
       <div>
         <!-- Modal Login -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login" style="">Login</button>
+        
           <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -50,7 +52,7 @@
                     </div>
                     <div class="form-group">
                       <label for="recipient-name" class="col-form-label">Senha:</label>
-                      <input type="text" name="senha" class="form-control" id="recipient-name">
+                      <input type="password" name="senha" class="form-control" id="recipient-name">
                     </div>
                   </div>
                   <div class="modal-footer">
@@ -61,43 +63,7 @@
               </div>
             </div>
           </div>
-          <!--MOdal Cadastro-->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cadastro">Cadastro</button>
-          <div class="modal fade" id="cadastro" tabindex="-1" role="dialog" aria-labelledby="cadastro" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="cadastro">Cadastro</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <form method="POST" action="">
-                  <div class="modal-body">
-                  <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">Nome:</label>
-                      <input type="text" class="form-control" id="recipient-name">
-                    </div>
-                    <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">E-mail:</label>
-                      <input type="text" class="form-control" id="recipient-name">
-                    </div>
-                    <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">Senha:</label>
-                      <input type="text" class="form-control" id="recipient-name">
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
-                    <button type="button" class="btn btn-primary">Entrar</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-      </div>
     </nav>
-    
     <div class="container">
       <img class="img" src="img/icon-personagem.png" alt="">
     </div>
