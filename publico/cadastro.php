@@ -24,7 +24,7 @@ if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
           <a href="cadastro.php"><img src="../img/icone-camera.png" class="logo" alt=""></a>
           <a class="logo navbar-brand">WM</a>
         </h1>
-        <h5><a href="cadastro.php">Cadatros</a></h5>
+        <h5><a href="cadastro.php">Cadastro</a></h5>
         <h5><a href="ocorrencias.php">Ocorrências</a></h5>
         <h5><a href="status.php">Status</a></h5>
         <div class="form-inline">

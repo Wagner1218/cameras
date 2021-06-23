@@ -16,15 +16,15 @@ $editar_item = $_GET["editar_item"];
 $deletar = isset($_POST["acao"]) && $_POST["acao"] == 'deletar';
 $editar = isset($_POST["acao"]) && $_POST["acao"] == 'editar';
 $editar_ocorrencias = isset($_POST["acao"]) && $_POST["acao"] == 'editar_ocorrencias';
+
 if($salvar){
-    $resp = $pdo->prepare("INSERT INTO ocorrencias (`nome`, `telefone`, `data1`, `horario`, `local1`, `link`,
-    `descricao`) VALUES (:nome, :telefone, :data1, :horario, :local1, :link, :descricao)");
+    $resp = $pdo->prepare("INSERT INTO ocorrencias (`nome`, `telefone`, `data1`, `horario`, `local1`,
+     `descricao`) VALUES (:nome, :telefone, :data1, :horario, :local1, :descricao)");
     $resp->bindValue(":nome", $nome);
     $resp->bindValue(":telefone", $telefone);
     $resp->bindValue(":data1", $data1);
     $resp->bindValue(":horario", $horario);
     $resp->bindValue(":local1", $local1);
-    $resp->bindValue(":link", $link);
     $resp->bindValue(":descricao", $descricao);
     $resp->execute();
     header('Location: ../publico/cadastro.php');
@@ -56,8 +56,6 @@ if($salvar){
      $resp->bindValue(":id", $editar_item); 
      $resp->execute();
      header('Location: ../publico/ocorrencias.php');
-   
-   
 }
 
 
