@@ -47,7 +47,7 @@
                 <form method="POST" action="login/autenticar.php">
                   <div class="modal-body">
                     <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">Usuário:</label>
+                      <label for="recipient-name" class="col-form-label">Usuário</label>
                       <input type="text" name="email" class="form-control" id="recipient-name">
                     </div>
                     <div class="form-group">
