@@ -51,7 +51,11 @@ if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
                 <th scope="col">Data</th>
                 <th scope="col">Local</th>
                 <th scope="col">Horário</th>
-                <th scope="col">Link</th>
+                <?php
+                if($_SESSION['cargo'] == 'adm100'){
+                    echo"<th scope='col'>Link</th>";
+                  }
+                ?>
               </tr>
             </thead>
             
