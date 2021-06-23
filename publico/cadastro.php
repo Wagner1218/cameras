@@ -1,8 +1,8 @@
 <?php
 session_start();
-
+ 
 if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
-  require ("../php/consulta.php");   
+   
 }else{
   header('Location: ../index.php?login=erro');
 }
@@ -62,10 +62,14 @@ if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
               <label for="formGroupExampleInput">Local</label>
               <input type="text" name="local1" class="form-control" id="formGroupExampleInput" placeholder="Local:" required>
             </div>
-            <div class="form-group">
-              <label for="formGroupExampleInput">Link</label>
-              <input type="text" name="link" class="form-control" id="formGroupExampleInput" placeholder="Local:" required>
-            </div>
+            <?php
+              if($_SESSION['cargo'] == 'adm100'){
+                echo "<div class='form-group'>
+                  <label for='formGroupExampleInput'>Link</label>
+                  <input type='text' name='link' class='form-control' id='formGroupExampleInput' placeholder='Local:'>
+                </div>";
+              }
+            ?>
             <div class="form-group">
               <label for="exampleFormControlTextarea1">Descrição</label>
               <textarea class="form-control" name="descricao" id="exampleFormControlTextarea1" rows="5"></textarea>

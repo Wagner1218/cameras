@@ -3,7 +3,7 @@ session_start();
 
 if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
   require ("../php/consulta.php");   
- 
+  
 }else{
   header('Location: ../index.php?login=erro');
 }
@@ -76,10 +76,11 @@ if($_SESSION['id'] != '' && $_SESSION['nome'] != ''){
                       ?>
                     <?php      
                         if($_SESSION['cargo'] == 'adm100'){
-                          echo "<form method='POST' action='../php/controlador.php?del=$dbaselec->id'>
+                          echo "<form method='POST' action='../php/controlador.php?item=$dbaselec->id'>
                             <th>
                               <button type='submit' name='acao' value='deletar' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button>
-                          </form>";
+                              <button type='submit' name='acao' value='editar' class='btn btn-danger'><i class='fa fa-pencil' aria-hidden='true'></i></button>
+                            </form>";
                         }
                           echo"</th>
                         </tr>
