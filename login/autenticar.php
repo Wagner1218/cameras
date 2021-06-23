@@ -1,7 +1,7 @@
 <?php
 
 include '../php/conectaBD.php';
-include '../php/conectaBD.php';
+
 
 $email = $_POST["email"];
 $senha = $_POST["senha"];
